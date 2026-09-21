@@ -1,111 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#111114">
-  <meta name="description" content="Factorial Academy — JEE preparation, lecture tracking, practice and course access.">
-  <meta property="og:title" content="Factorial Academy">
-  <meta property="og:description" content="A focused JEE learning workspace built around lectures, PYQs and measurable progress.">
-  <meta property="og:image" content="./logot.png">
-  <title>Factorial Academy — JEE Preparation</title>
-  <link rel="icon" href="./logot.png">
-  <link rel="stylesheet" href="./css/app.css">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-</head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0f"><meta name="description" content="Factorial Academy — your JEE classroom. Free chapterwise YouTube courses plus focused paid programs, tests and revision tools.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
+<title>Factorial Academy — Your JEE Classroom</title>
+<style>
+@font-face{font-family:Inter;src:url('inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{--bg:#07090d;--panel:#0d1118;--panel2:#111722;--text:#f5f7fb;--muted:#9aa4b2;--line:#202733;--accent:#e8ff54;--accent2:#b8d43b;--blue:#7dd3fc;--green:#62e6a2;--danger:#ff7d91;--shadow:0 20px 70px #0007}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% -10%,#26301b 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit} .wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.nav{height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;background:#07090de8;backdrop-filter:blur(18px);z-index:50}.navin{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em}.brand img{width:34px;height:34px;border-radius:10px}.brand span{font-size:18px}.links{display:flex;gap:4px}.links a{padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14px}.links a:hover{background:#fff08;color:var(--text)}.actions{display:flex;gap:8px;align-items:center}.btn{border:1px solid var(--line);background:var(--panel);padding:10px 14px;border-radius:10px;font-weight:650;font-size:14px}.btn:hover{border-color:#46505e}.btn.primary{background:var(--accent);color:#111600;border-color:var(--accent)}.btn.primary:hover{background:#f0ff78}.btn.ghost{background:transparent}.mobile{display:none}
+.hero{padding:90px 0 70px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--accent);font-weight:750;font-size:13px;text-transform:uppercase;letter-spacing:.12em}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}h1{font-size:clamp(46px,7vw,82px);line-height:.96;letter-spacing:-.07em;margin:17px 0 22px;max-width:760px}h1 em{font-style:normal;color:var(--accent)}.lead{font-size:19px;color:var(--muted);max-width:650px}.hero-cta{display:flex;gap:10px;margin:28px 0 25px;flex-wrap:wrap}.trust{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px}.trust b{color:var(--text)}
+.preview{background:linear-gradient(145deg,#141a22,#0b0f15);border:1px solid #29313c;border-radius:20px;padding:16px;box-shadow:var(--shadow);transform:rotate(1deg)}.browser{border:1px solid #303844;border-radius:13px;overflow:hidden;background:#090c11}.browserbar{height:34px;border-bottom:1px solid #252c35;display:flex;align-items:center;gap:5px;padding:0 10px}.browserbar i{width:7px;height:7px;border-radius:50%;background:#46505b}.screen{padding:16px}.screen-top{display:flex;justify-content:space-between;color:#aab3bf;font-size:11px;margin-bottom:15px}.screen-title{font-size:24px;font-weight:800;letter-spacing:-.04em}.progress{height:6px;background:#252d37;border-radius:99px;overflow:hidden;margin:13px 0 18px}.progress i{display:block;width:62%;height:100%;background:var(--accent)}.video{aspect-ratio:16/9;background:linear-gradient(135deg,#1b222b,#0c1016);border-radius:10px;display:grid;place-items:center}.play{width:54px;height:54px;border-radius:50%;background:var(--accent);color:#111600;display:grid;place-items:center;font-weight:900}
+section{padding:65px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.section-head h2{font-size:36px;letter-spacing:-.05em;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);max-width:650px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:20px;min-height:190px;display:flex;flex-direction:column}.card:hover{border-color:#394351;transform:translateY(-2px)}.tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}.card h3{font-size:21px;letter-spacing:-.035em;margin:0 0 7px}.card p{color:var(--muted);font-size:14px;margin:0}.card .bottom{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center}.price{font-weight:800;font-size:18px}.old{text-decoration:line-through;color:#66707d;font-weight:500;font-size:13px;margin-left:5px}.course{min-height:250px}.course .icon{font-size:28px;margin-bottom:15px}.free{border-color:#3c5222;background:linear-gradient(145deg,#121a10,#0c1110)}.paid{border-color:#28303a}.course ul{padding:0;margin:15px 0 0;list-style:none;color:var(--muted);font-size:13px}.course li{margin:6px 0}.course li::before{content:'✓';color:var(--green);margin-right:7px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}.stat{padding:24px;border-right:1px solid var(--line);background:#0b0f14}.stat:last-child{border-right:0}.stat b{font-size:30px;letter-spacing:-.05em}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}.num{color:var(--accent);font-weight:800;font-size:12px}.step h3{margin:9px 0 5px}.step p{margin:0;color:var(--muted);font-size:13px}
+.banner{background:linear-gradient(120deg,#dff54e,#a9c83a);color:#111600;border-radius:22px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:20px}.banner h2{font-size:40px;line-height:1;letter-spacing:-.06em;margin:0 0 8px}.banner p{margin:0;max-width:650px;color:#26300b}.banner .btn{background:#101500;color:#eaff72;border-color:#101500}
+.faq{max-width:850px}.faq details{border-top:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);margin:10px 0 0;font-size:14px}
+footer{border-top:1px solid var(--line);padding:35px 0 50px;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.modal{position:fixed;inset:0;background:#000a;display:none;place-items:center;padding:20px;z-index:100}.modal.open{display:grid}.dialog{width:min(520px,100%);background:#10151d;border:1px solid #303946;border-radius:18px;padding:24px;box-shadow:var(--shadow)}.dialog h2{margin:0 0 8px;font-size:27px}.dialog p{color:var(--muted)}.close{float:right;border:0;background:transparent;font-size:22px;color:var(--muted)}.form{display:grid;gap:10px}.input{width:100%;background:#0a0e14;border:1px solid #2b3440;border-radius:10px;padding:12px;color:var(--text)}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.preview{display:none}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.links{display:none}.mobile{display:inline-flex}.hero{padding-top:65px}}
+@media(max-width:560px){.wrap{width:min(100% - 24px,1180px)}.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero-cta .btn{width:100%;text-align:center}.banner{padding:28px;display:block}.banner .btn{margin-top:18px;width:100%}h1{font-size:48px}.nav{height:66px}}
+</style></head>
 <body>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-  <div id="toast-root" aria-live="polite"></div>
-
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-logo"><img src="./logot.png" alt="Factorial Academy"></div>
-        <div><b>FACTORIAL</b><span>ACADEMY</span></div>
-      </div>
-
-      <div class="sidebar-label">Workspace</div>
-      <nav class="nav-stack" id="main-nav">
-        <button class="nav-btn active" data-route="dashboard"><span class="nav-index">01</span><span>Dashboard</span></button>
-        <button class="nav-btn" data-route="library"><span class="nav-index">02</span><span>Lectures Library</span></button>
-        <button class="nav-btn" data-route="store"><span class="nav-index">03</span><span>Course Store</span><span class="nav-pill">NEW</span></button>
-        <button class="nav-btn" data-route="videos"><span class="nav-index">04</span><span>My Classroom</span></button>
-        <button class="nav-btn" data-route="practice"><span class="nav-index">05</span><span>Practice Hub</span></button>
-        <button class="nav-btn" data-route="qotd"><span class="nav-index">06</span><span>Question of Day</span></button>
-      </nav>
-
-      <div class="sidebar-label">Community</div>
-      <nav class="nav-stack">
-        <button class="nav-btn" data-route="leaderboard"><span class="nav-index">07</span><span>Leaderboard</span></button>
-        <button class="nav-btn" data-route="updates"><span class="nav-index">08</span><span>Updates</span></button>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <button class="nav-btn compact" data-route="profile"><span class="nav-index">◎</span><span>My Profile</span></button>
-        <button class="nav-btn compact" data-route="about"><span class="nav-index">?</span><span>About Factorial</span></button>
-        <button class="theme-btn" id="theme-toggle">◐ <span>Toggle appearance</span></button>
-        <button class="user-chip" id="auth-btn"><span class="avatar" id="avatar">G</span><span><b id="user-name">Guest student</b><small id="user-meta">Sign in to sync progress</small></span><span class="chevron">↗</span></button>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <button class="mobile-menu" id="mobile-menu">☰</button>
-        <div>
-          <div class="crumb">FACTORIAL ACADEMY / JEE PREPARATION</div>
-          <h1 id="page-title">Dashboard</h1>
-          <p id="page-subtitle">Welcome back — here's where you left off.</p>
-        </div>
-        <div class="topbar-actions">
-          <div class="status-dot"><i></i><span id="sync-label">Local demo mode</span></div>
-          <button class="top-avatar" id="top-auth"><span id="top-avatar-letter">G</span></button>
-        </div>
-      </header>
-
-      <section class="page" id="app-view" aria-live="polite"></section>
-    </main>
-  </div>
-
-  <nav class="mobile-dock">
-    <button data-route="dashboard">⌂<small>Home</small></button>
-    <button data-route="library">▤<small>Library</small></button>
-    <button data-route="store">◫<small>Store</small></button>
-    <button data-route="videos">▶<small>Classroom</small></button>
-    <button data-route="profile">◎<small>Profile</small></button>
-  </nav>
-
-  <!-- Auth -->
-  <div class="modal-backdrop" id="auth-modal" hidden>
-    <section class="modal auth-modal">
-      <button class="modal-x" data-close="auth-modal">×</button>
-      <div class="auth-mark">F</div>
-      <div class="eyebrow">STUDENT ACCESS</div>
-      <h2>Welcome to Factorial.</h2>
-      <p class="muted">Use Google for the production auth path, or launch the local demo workspace instantly.</p>
-      <button class="google-btn" id="google-login"><span class="google-g">G</span> Continue with Google</button>
-      <div class="or"><span>OR</span></div>
-      <button class="primary-btn wide" id="demo-login">Launch Demo Student</button>
-      <p class="microcopy">Demo data stays in this browser. No payment or credentials are sent.</p>
-      <div id="auth-error" class="form-error"></div>
-    </section>
-  </div>
-
-  <!-- Checkout -->
-  <div class="modal-backdrop" id="checkout-modal" hidden>
-    <section class="modal checkout-modal">
-      <button class="modal-x" data-close="checkout-modal">×</button>
-      <div id="checkout-body"></div>
-    </section>
-  </div>
-
-  <!-- Onboarding -->
-  <div class="modal-backdrop" id="onboarding-modal" hidden>
-    <section class="modal wide">
-      <button class="modal-x" data-close="onboarding-modal">×</button>
-      <div id="onboarding-body"></div>
-    </section>
-  </div>
-
-  <script type="module" src="./js/app.js"></script>
-</body>
-</html>
+<header class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="icons/icon-192.png"><span>Factorial Academy</span></a><nav class="links"><a href="#free">Free Classroom</a><a href="#courses">Paid Courses</a><a href="#tests">Test Series</a><a href="#why">Why Factorial</a></nav><div class="actions"><a class="btn ghost mobile" href="classroom.html">Classroom</a><button class="btn primary" onclick="openModal('login')">Student Login</button></div></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow"><span class="dot"></span> JEE preparation, in one place</div><h1>You don't need anything else.<br><em>Just study.</em></h1><p class="lead">Factorial Academy brings the free Factorial YouTube classroom, chapterwise learning, paid programs, tests, revision and progress tracking into one distraction-free JEE portal.</p><div class="hero-cta"><a class="btn primary" href="classroom.html">Enter Free Classroom →</a><a class="btn" href="#courses">Explore paid courses</a></div><div class="trust"><span><b>700+</b> free lessons</span><span><b>Chapterwise</b> JEE Maths</span><span><b>Free forever</b> library</span></div></div><div class="preview"><div class="browser"><div class="browserbar"><i></i><i></i><i></i></div><div class="screen"><div class="screen-top"><span>FACTORIAL / FREE CLASSROOM</span><span>62% complete</span></div><div class="screen-title">Definite Integration</div><div class="progress"><i></i></div><div class="video"><div class="play">▶</div></div></div></div></div></div></section>
+<section id="free"><div class="wrap"><div class="section-head"><div><h2>Free JEE Classroom</h2><p>The content from your current Factorial site stays inside the Factorial website. No bouncing around YouTube playlists — search, sort, watch, tick off, revise and continue.</p></div><a class="btn primary" href="classroom.html">Open classroom</a></div><div class="grid"><div class="card free"><div class="tag">Free · Full library</div><h3>Chapterwise YouTube Courses</h3><p>All indexed Factorial lessons organized into JEE chapters with progress, stars, notes and resume state.</p><div class="bottom"><span>700+ lessons</span><a href="classroom.html">Start →</a></div></div><div class="card free"><div class="tag">Free · Focus mode</div><h3>Distraction-free player</h3><p>Study inside a focused classroom interface while retaining the existing tracker features and YouTube embeds.</p><div class="bottom"><span>No sign-up required</span><a href="classroom.html">Study →</a></div></div><div class="card free"><div class="tag">Free · Progress</div><h3>Revision & progress</h3><p>Watched state, stars, notes, daily goals, revision intervals, reports, backups and PWA support.</p><div class="bottom"><span>Saved locally</span><a href="classroom.html">Track →</a></div></div></div></div></section>
+<section id="courses"><div class="wrap"><div class="section-head"><div><h2>Paid programs</h2><p>Optional structured programs for students who want more than the free classroom: guided batches, assignments, tests, doubt support and deeper tracking.</p></div></div><div class="grid"><article class="card course"><div class="icon">∑</div><div class="tag">JEE Mathematics</div><h3>Factorial Maths Complete</h3><p>Structured Maths program from foundations to Advanced problem solving.</p><ul><li>Full chapter sequence</li><li>Practice sheets + assignments</li><li>Tests & performance analytics</li></ul><div class="bottom"><span class="price">₹4,999 <span class="old">₹7,999</span></span><button class="btn primary" onclick="openModal('buy','Factorial Maths Complete','4999')">View course</button></div></article><article class="card course"><div class="icon">⌁</div><div class="tag">JEE Advanced</div><h3>Advanced Problem Solving</h3><p>A focused problem-solving program built around tougher JEE Advanced questions.</p><ul><li>Curated Advanced sets</li><li>Timed practice</li><li>Detailed solutions</li></ul><div class="bottom"><span class="price">₹2,999</span><button class="btn primary" onclick="openModal('buy','Advanced Problem Solving','2999')">View course</button></div></article><article class="card course"><div class="icon">▦</div><div class="tag">JEE 2027</div><h3>Factorial Test Series</h3><p>Exam-style practice with chapter, part and full-syllabus tests.</p><ul><li>JEE Main pattern</li><li>Advanced-style papers</li><li>Rank & analysis dashboard</li></ul><div class="bottom"><span class="price">₹1,499</span><button class="btn primary" onclick="openModal('buy','Factorial Test Series','1499')">View series</button></div></article></div></div></section>
+<section id="tests"><div class="wrap"><div class="section-head"><div><h2>Everything around the lecture</h2><p>The portal is designed as the student's home base, not just a video list.</p></div></div><div class="steps"><div class="step"><div class="num">01</div><h3>Learn</h3><p>Open a chapter and continue exactly where you stopped.</p></div><div class="step"><div class="num">02</div><h3>Practice</h3><p>Use assignments and optional paid test programs to turn watching into solving.</p></div><div class="step"><div class="num">03</div><h3>Revise</h3><p>Star weak lessons, add notes and use spaced revision intervals.</p></div><div class="step"><div class="num">04</div><h3>Measure</h3><p>Track chapter completion and test performance in one student workspace.</p></div></div></div></section>
+<section id="why"><div class="wrap"><div class="stats"><div class="stat"><b>700+</b><span>free lessons indexed</span></div><div class="stat"><b>28</b><span>chapter buckets in the library</span></div><div class="stat"><b>1</b><span>focused student home</span></div><div class="stat"><b>0</b><span>need to hunt for playlists</span></div></div></div></section>
+<section><div class="wrap"><div class="banner"><div><h2>Start free. Go deeper when you need it.</h2><p>The free Factorial classroom is the core. Paid courses, tests and structured programs sit alongside it — optional, not a gate around the free content.</p></div><a class="btn" href="classroom.html">Enter classroom →</a></div></div></section>
+<section><div class="wrap faq"><div class="section-head"><div><h2>Questions</h2></div></div><details><summary>Is the free YouTube content actually available on this website?</summary><p>Yes. The Free Classroom page is the existing Factorial video portal embedded into this site experience. Students can browse chapters and open lessons without leaving for a separate playlist directory.</p></details><details><summary>Are paid courses replacing the free library?</summary><p>No. In this prototype the free classroom remains a first-class section. Paid programs are separate optional products with their own checkout flow.</p></details><details><summary>Can the paid checkout become real?</summary><p>Yes. The course cards currently use a simulated checkout so the prototype works without secrets. A production build can connect the same UI to Razorpay Orders plus server-side payment verification.</p></details></div></section>
+</main>
+<footer><div class="wrap foot"><span>© Factorial Academy · JEE preparation</span><span>Free classroom · Paid programs · Tests · Revision</span></div></footer>
+<div class="modal" id="modal"><div class="dialog"><button class="close" onclick="closeModal()">×</button><div id="modalBody"></div></div></div>
+<script>
+const modal=document.getElementById('modal'), body=document.getElementById('modalBody');
+function openModal(type,name,price){
+ modal.classList.add('open');
+ if(type==='login') body.innerHTML=`<h2>Student login</h2><p>Prototype mode: enter the classroom immediately, or use a demo student account.</p><div class="form"><input class="input" placeholder="Email" value="demo@student.com"><input class="input" placeholder="Password" value="demo123"><button class="btn primary" onclick="location.href='classroom.html'">Continue to classroom</button></div>`;
+ else body.innerHTML=`<div class="tag">PAID PROGRAM</div><h2>${name}</h2><p>Prototype checkout for <b>₹${price}</b>. In production this button can create a Razorpay order and verify payment server-side.</p><div class="form"><input class="input" placeholder="Student name"><input class="input" placeholder="Email"><button class="btn primary" onclick="demoBuy('${name}',${price})">Simulate secure checkout</button></div>`;
+}
+function demoBuy(name,price){localStorage.setItem('fa_last_order',JSON.stringify({name,price,at:Date.now()}));body.innerHTML=`<h2>Enrollment successful ✓</h2><p><b>${name}</b> has been added to your demo account.</p><button class="btn primary" onclick="closeModal()">Go to dashboard</button>`}
+function closeModal(){modal.classList.remove('open')};modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+</script></body></html>
