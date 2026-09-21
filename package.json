@@ -1,0 +1,10 @@
+{
+  "name": "factorial-academy-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional client-side prototype for Factorial Academy",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "python3 -m http.server 4173"
+  }
+}
