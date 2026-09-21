@@ -1,0 +1,11 @@
+import { answerQotd, getState } from "./state.js";
+const questions=[
+ {id:"q1",q:"Let f(x)=x²eˣ. Find f''(0).",opts:["0","1","2","4"],ans:3,why:"f''(x)=eˣ(x²+4x+2), so f''(0)=2."},
+ {id:"q2",q:"If the roots of x²−5x+k=0 are equal, k equals:",opts:["5/2","25/4","10","0"],ans:2,why:"Equal roots require discriminant 25−4k=0."},
+ {id:"q3",q:"The maximum value of sin x + cos x is:",opts:["1","√2","2","0"],ans:2,why:"sin x + cos x = √2 sin(x+π/4), whose maximum is √2."}
+];
+export function renderQotd({container,toast}){
+  const day=Math.floor(Date.now()/86400000), item=questions[day%questions.length], st=getState(), saved=st.qotdAnswers[item.id];
+  container.innerHTML=`<div class="qotd-layout" style="display:grid;grid-template-columns:1.2fr .8fr;gap:13px"><div class="panel" style="padding:28px"><div class="eyebrow">QUESTION OF THE DAY · JEE ADVANCED</div><h2 style="font-size:28px;letter-spacing:-1px;margin:10px 0 22px">${item.q}</h2><div>${item.opts.map((o,i)=>`<button class="answer ${saved!==undefined&&saved===i?(i===item.ans?"correct":"wrong"):""}" data-ans="${i}">${String.fromCharCode(65+i)}. ${o}</button>`).join("")}</div><div id="qotd-result" style="margin-top:14px;font-size:10px">${saved!==undefined?`<strong>${saved===item.ans?"Correct":"Not quite."}</strong> ${item.why}`:"Choose an answer to lock your response."}</div></div><aside class="panel" style="padding:24px"><div class="eyebrow">DAILY RITUAL</div><h3>One sharp problem. Every day.</h3><p class="muted" style="font-size:10px">Build the habit before you build the rank. Your answer is stored locally so you can revisit it.</p><div class="metric-grid"><div class="metric"><strong>${day%365}</strong><span>Day index</span></div><div class="metric"><strong>01</strong><span>Daily problem</span></div><div class="metric"><strong>${saved!==undefined?"✓":"—"}</strong><span>Answered</span></div></div></aside></div>`;
+  container.querySelectorAll("[data-ans]").forEach(b=>b.onclick=()=>{const a=Number(b.dataset.ans);answerQotd(item.id,a);renderQotd({container,toast});toast(a===item.ans?"Correct — keep the streak alive.":"Good attempt. Read the solution and revisit the concept.")});
+}
